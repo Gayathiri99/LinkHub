@@ -13,6 +13,28 @@ document.addEventListener('DOMContentLoaded', () => {
       link: 'https://chat.whatsapp.com/example-tech-community'
     },
     {
+      name: 'Food recipes',
+      platform: 'WhatsApp',
+      category: 'Food',
+      country:'India',
+      state:'AndhraPradesh',
+      district:'Guntur',
+      members: 1250,
+      status: 'Pending',
+      link: 'https://chat.whatsapp.com/example-tech-community'
+    },
+    {
+      name: 'Full Stack',
+      platform: 'WhatsApp',
+      category: 'Education',
+      country:'UAE',
+      state:'Duabi',
+      district:'Dubai',
+      members: 120,
+      status: 'Pending',
+      link: 'https://chat.whatsapp.com/example-tech-community'
+    },
+    {
       name: 'Job Alert Circle',
       platform: 'Telegram',
       category: 'Jobs',
