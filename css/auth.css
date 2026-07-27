@@ -3,14 +3,14 @@
    Login, Register, and Auth Pages
    ============================================================ */
 
-/* ── Base Reset (scoped to auth pages) ───────────────── */
+/* ── Base Reset (scoped to auth pages) ─────────────────────── */
 .auth-page *,
 .auth-page *::before,
 .auth-page *::after {
     box-sizing: border-box;
 }
 
-/* ── Auth Page Layout ────────────────────────────────── */
+/* ── Auth Page Layout ─────────────────────────────────────── */
 .auth-page {
     min-height: calc(100vh - 80px);
     display: flex;
@@ -44,7 +44,7 @@
     pointer-events: none;
 }
 
-/* ── Auth Card ───────────────────────────────────────── */
+/* ── Auth Card ────────────────────────────────────────────── */
 .auth-card {
     width: 100%;
     max-width: 480px;
@@ -92,7 +92,7 @@
     margin-bottom: 30px;
 }
 
-/* ── Auth Form ───────────────────────────────────────── */
+/* ── Auth Form ────────────────────────────────────────────── */
 .auth-card form {
     display: flex;
     flex-direction: column;
@@ -130,7 +130,7 @@
     color: var(--text-muted);
 }
 
-/* ── Auth Button ─────────────────────────────────────── */
+/* ── Auth Button ──────────────────────────────────────────── */
 .auth-btn {
     width: 100%;
     padding: 14px;
@@ -156,7 +156,7 @@
     transform: translateY(0);
 }
 
-/* ── Bottom Link ─────────────────────────────────────── */
+/* ── Bottom Link ──────────────────────────────────────────── */
 .auth-link {
     text-align: center;
     margin-top: 24px;
@@ -176,7 +176,7 @@
     text-decoration: underline;
 }
 
-/* ── Validation Errors ───────────────────────────────── */
+/* ── Validation Errors ────────────────────────────────────── */
 .error {
     color: #ef4444;
     font-size: 0.8rem;
@@ -186,7 +186,7 @@
     gap: 5px;
 }
 
-/* ── Divider ─────────────────────────────────────────── */
+/* ── Divider ──────────────────────────────────────────────── */
 .auth-divider {
     display: flex;
     align-items: center;
@@ -204,7 +204,7 @@
     background: var(--border);
 }
 
-/* ── Responsive ──────────────────────────────────────── */
+/* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 600px) {
     .auth-card {
         padding: 32px 24px;
