@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       platform: 'WhatsApp',
       category: 'Education',
       country:'UAE',
-      state:'Duabi',
+      state:'Dubai',
       district:'Dubai',
       members: 120,
       status: 'Pending',
