@@ -44,8 +44,228 @@ document.addEventListener('DOMContentLoaded', () => {
       members: 2400,
       status: 'Pending',
       link: 'https://t.me/examplejobcircle'
-    }
-  ];
+    },
+  {
+    name: 'Full Stack',
+    platform: 'WhatsApp',
+    category: 'Education',
+    country: 'UAE',
+    state: 'Dubai',
+    district: 'Dubai',
+    members: 120,
+    status: 'Pending',
+    link: 'https://chat.whatsapp.com/example-fullstack'
+  },
+  {
+    name: 'Java Developers',
+    platform: 'WhatsApp',
+    category: 'Technology',
+    country: 'India',
+    state: 'Tamil Nadu',
+    district: 'Chennai',
+    members: 350,
+    status: 'Approved',
+    link: 'https://chat.whatsapp.com/example-java'
+  },
+  {
+    name: 'Python Coders',
+    platform: 'Telegram',
+    category: 'Technology',
+    country: 'India',
+    state: 'Karnataka',
+    district: 'Bangalore',
+    members: 560,
+    status: 'Approved',
+    link: 'https://t.me/example-python'
+  },
+  {
+    name: 'UI UX Designers',
+    platform: 'Facebook',
+    category: 'Design',
+    country: 'India',
+    state: 'Kerala',
+    district: 'Kochi',
+    members: 430,
+    status: 'Approved',
+    link: 'https://facebook.com/groups/uiuxdesigners'
+  },
+  {
+    name: 'Digital Marketing',
+    platform: 'Instagram',
+    category: 'Business',
+    country: 'Singapore',
+    state: 'Central',
+    district: 'Orchard',
+    members: 275,
+    status: 'Pending',
+    link: 'https://instagram.com/examplemarketing'
+  },
+  {
+    name: 'Data Science',
+    platform: 'WhatsApp',
+    category: 'Education',
+    country: 'USA',
+    state: 'California',
+    district: 'Los Angeles',
+    members: 480,
+    status: 'Approved',
+    link: 'https://chat.whatsapp.com/example-datascience'
+  },
+  {
+    name: 'AI Enthusiasts',
+    platform: 'Telegram',
+    category: 'Technology',
+    country: 'Canada',
+    state: 'Ontario',
+    district: 'Toronto',
+    members: 670,
+    status: 'Approved',
+    link: 'https://t.me/example-ai'
+  },
+  {
+    name: 'Startup Founders',
+    platform: 'Facebook',
+    category: 'Business',
+    country: 'UK',
+    state: 'England',
+    district: 'London',
+    members: 820,
+    status: 'Approved',
+    link: 'https://facebook.com/groups/startupfounders'
+  },
+  {
+    name: 'Photography Club',
+    platform: 'Instagram',
+    category: 'Photography',
+    country: 'Australia',
+    state: 'Victoria',
+    district: 'Melbourne',
+    members: 315,
+    status: 'Pending',
+    link: 'https://instagram.com/examplephoto'
+  },
+  {
+    name: 'Gaming Zone',
+    platform: 'WhatsApp',
+    category: 'Gaming',
+    country: 'India',
+    state: 'Maharashtra',
+    district: 'Mumbai',
+    members: 710,
+    status: 'Approved',
+    link: 'https://chat.whatsapp.com/example-gaming'
+  },
+  {
+    name: 'Travel Buddies',
+    platform: 'Telegram',
+    category: 'Travel',
+    country: 'India',
+    state: 'Goa',
+    district: 'Panaji',
+    members: 245,
+    status: 'Approved',
+    link: 'https://t.me/exampletravel'
+  },
+  {
+    name: 'Fitness Freaks',
+    platform: 'Facebook',
+    category: 'Health',
+    country: 'UAE',
+    state: 'Abu Dhabi',
+    district: 'Abu Dhabi',
+    members: 510,
+    status: 'Pending',
+    link: 'https://facebook.com/groups/fitnessfreaks'
+  },
+  {
+    name: 'Food Lovers',
+    platform: 'Instagram',
+    category: 'Food',
+    country: 'Malaysia',
+    state: 'Selangor',
+    district: 'Shah Alam',
+    members: 390,
+    status: 'Approved',
+    link: 'https://instagram.com/examplefood'
+  },
+  {
+    name: 'React Developers',
+    platform: 'WhatsApp',
+    category: 'Technology',
+    country: 'Singapore',
+    state: 'Central',
+    district: 'Marina Bay',
+    members: 600,
+    status: 'Approved',
+    link: 'https://chat.whatsapp.com/example-react'
+  },
+  {
+    name: 'Machine Learning',
+    platform: 'Telegram',
+    category: 'Education',
+    country: 'Germany',
+    state: 'Berlin',
+    district: 'Berlin',
+    members: 510,
+    status: 'Approved',
+    link: 'https://t.me/exampleml'
+  },
+  {
+    name: 'Freelancers Hub',
+    platform: 'Facebook',
+    category: 'Business',
+    country: 'India',
+    state: 'Delhi',
+    district: 'New Delhi',
+    members: 900,
+    status: 'Approved',
+    link: 'https://facebook.com/groups/freelancershub'
+  },
+  {
+    name: 'Canva Creators',
+    platform: 'Instagram',
+    category: 'Design',
+    country: 'India',
+    state: 'Tamil Nadu',
+    district: 'Coimbatore',
+    members: 285,
+    status: 'Pending',
+    link: 'https://instagram.com/examplecanva'
+  },
+  {
+    name: 'Cloud Computing',
+    platform: 'WhatsApp',
+    category: 'Technology',
+    country: 'India',
+    state: 'Telangana',
+    district: 'Hyderabad',
+    members: 430,
+    status: 'Approved',
+    link: 'https://chat.whatsapp.com/example-cloud'
+  },
+  {
+    name: 'Job Updates',
+    platform: 'Telegram',
+    category: 'Career',
+    country: 'India',
+    state: 'Tamil Nadu',
+    district: 'Madurai',
+    members: 1200,
+    status: 'Approved',
+    link: 'https://t.me/examplejobs'
+  },
+  {
+    name: 'Music Lovers',
+    platform: 'Facebook',
+    category: 'Entertainment',
+    country: 'India',
+    state: 'Kerala',
+    district: 'Trivandrum',
+    members: 540,
+    status: 'Pending',
+    link: 'https://facebook.com/groups/musiclovers'
+  }
+];
 
   const defaultCategories = ['Education', 'Business'];
 
