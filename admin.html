@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - LinkHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <style>
+      .admin-dashboard {
+        min-height: calc(100vh - 80px);
+        padding: 40px 20px;
+        background: #f8fafc;
+      }
+      .admin-sidebar{
+    width:260px;
+    margin-top:130px;
+    border-radius:10px;
+    background:#1e293b;
+    color:#fff;
+    position:fixed;
+    top:0;
+    height:60vh;
+    padding:30px 20px;
+    overflow-y:auto;
+}
+
+.admin-sidebar h2{
+    margin-bottom:25px;
+    font-size:22px;
+}
+
+.admin-sidebar ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.admin-sidebar li{
+    margin-bottom:12px;
+}
+
+.admin-sidebar a{
+    display:block;
+    padding:12px 16px;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.admin-sidebar a:hover{
+    background:#2563eb;
+}
+
+      .admin-card {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 18px;
+        padding: 32px;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      }
+      .admin-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin: 20px 0 30px;
+      }
+      .admin-box {
+        padding: 18px;
+        border-radius: 12px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+      }
+      .admin-section {
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid #e2e8f0;
+      }
+      .admin-section h2 {
+        margin-bottom: 12px;
+        color: #1f2937;
+      }
+      .admin-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+      .admin-list li {
+        padding: 12px 14px;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        background: #fff;
+      }
+      .admin-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .admin-actions button {
+        border: none;
+        border-radius: 8px;
+        padding: 6px 10px;
+        background: #2563eb;
+        color: white;
+        cursor: pointer;
+      }
+      .admin-form {
+        display: grid;
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .admin-form input,
+      .admin-form select {
+        padding: 10px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+      }
+      .admin-form button {
+        padding: 10px 12px;
+        border: none;
+        border-radius: 8px;
+        background: #0f766e;
+        color: white;
+        cursor: pointer;
+      }
+      .admin-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 12px 0;
+      }
+      .admin-filters select {
+        flex: 1 1 160px;
+        padding: 10px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+      }
+      .admin-status {
+        display: block;
+        margin-top: 4px;
+        font-size: 0.9rem;
+        color: #64748b;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">LinkHub</a>
+        </div>
+        <nav class="nav-menu">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#whatsapp">WhatsApp</a></li>
+            <li><a href="index.html#facebook">Facebook</a></li>
+            <li><a href="index.html#telegram">Telegram</a></li>
+            <li><a href="index.html#instagram">Instagram</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="admin-dashboard">
+      <aside class="admin-sidebar">
+        <h2>Admin Panel</h2>
+
+        <ul>
+            <li><a href="#usersList">👥 Manage Users</a></li>
+            <li><a href="#groupForm">📂 Manage Groups</a></li>
+            <li><a href="#groupsList">🔍 Filter Groups</a></li>
+            <li><a href="#categoryForm">🏷 Manage Categories</a></li>
+            <li><a href="#scamReportsList">🚩 Scam Reports</a></li>
+        </ul>
+    </aside>
+      <div class="admin-card">
+        <h1>Admin Dashboard</h1>
+        <p>Manage users, groups, and categories for CommunityHub.</p>
+
+        <div class="admin-grid">
+          <div class="admin-box">
+            <h3>Total Users</h3>
+            <p id="totalUsers">0</p>
+          </div>
+          <div class="admin-box">
+            <h3>Total Groups</h3>
+            <p id="totalGroups">0</p>
+          </div>
+          <div class="admin-box">
+            <h3>Pending Groups</h3>
+            <p id="pendingGroups">0</p>
+          </div>
+          <div class="admin-box">
+            <h3>Approved Groups</h3>
+            <p id="approvedGroups">0</p>
+          </div>
+          <div class="admin-box">
+            <h3>Categories</h3>
+            <p id="categoriesCount">0</p>
+          </div>
+        </div>
+
+        <section class="admin-section">
+          <h2>Manage Users</h2>
+          <ul class="admin-list" id="usersList"></ul>
+        </section>
+
+        <section class="admin-section">
+          <h2>Manage Groups</h2>
+          <form id="groupForm" class="admin-form">
+            <input type="text" name="groupName" placeholder="Group name" required />
+            <select name="groupPlatform">
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Telegram">Telegram</option>
+              <option value="Instagram">Instagram</option>
+            </select>
+            <select name="groupCategory" placeholder="Category">
+              <option value="Education">Education</option>
+              <option value="Business">Business</option>
+              <option value="Food">Food</option>
+              <option value="Gaming">Gaming</option>
+              <option value="Technology">Technology</option>
+              <option value="Jobs">Jobs</option>
+              <option value="Friendship">Friendship</option>
+              <option value="Health">Health</option>
+              <option value="Sports">Sports</option>
+              <option value="Arts">Arts</option>
+              <option value="Music">Music</option>
+              <option value="Nature">Nature</option>
+              <option value="Travel">Travel</option>
+              <option value="Photography">Photography</option>
+              <option value="Cooking">Cooking</option>
+              <option value="Finance">Finance</option>
+              <option value="Science">Science</option>
+              <option value="Movies">Movies</option>
+              <option value="Books">Books</option>
+              <option value="Fashion">Fashion</option>
+              <option value="AI">AI</option>
+              <option value="Pets">Pets</option>
+              <option value="Other">Other</option>
+            </select>
+            <input type="text" name="groupCountry" placeholder="Country" required />
+            <input type="text" name="groupState" placeholder="State" required />
+            <input type="text" name="groupDistrict" placeholder="District" required />
+            <input type="number" name="groupMembers" placeholder="Members" min="1" />
+            <input type="url" name="groupLink" placeholder="Group link (https://...)" />
+            <button type="submit">Create Group</button>
+          </form>
+          <div class="admin-filters" aria-label="Filter groups">
+            <select id="adminCountryFilter" aria-label="Filter groups by country"></select>
+            <select id="adminStateFilter" aria-label="Filter groups by state"></select>
+            <select id="adminDistrictFilter" aria-label="Filter groups by district"></select>
+            <select id="adminCategoryFilter" aria-label="Filter groups by category"></select>
+            <select id="adminGroupFilter" aria-label="Filter groups by group name"></select>
+          </div>
+          <ul class="admin-list" id="groupsList"></ul>
+        </section>
+
+        <section class="admin-section">
+          <h2>Manage Categories</h2>
+          <form id="categoryForm" class="admin-form">
+            <input type="text" name="categoryName" placeholder="Category name" required />
+            <button type="submit">Add Category</button>
+          </form>
+          <ul class="admin-list" id="categoriesList"></ul>
+        </section>
+
+        <section class="admin-section">
+          <h2>Scam Reports</h2>
+          <p>Groups reported as scams by users.</p>
+          <ul class="admin-list" id="scamReportsList"></ul>
+        </section>
+      </div>
+    </main>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

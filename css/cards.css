@@ -1,0 +1,375 @@
+/* ============================================================
+   CARDS — CommunityHub Modern Design System
+   Group cards, trending section, favorites, empty states
+   ============================================================ */
+
+/* ── Trending Section ─────────────────────────────────── */
+#trending {
+    padding: 90px 0;
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+#trending::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.04) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ── Section Header ───────────────────────────────────── */
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.section-title i {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+.section-description {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ── Group Grid ───────────────────────────────────────── */
+.group-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* ── Group Card ───────────────────────────────────────── */
+.group-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    min-height: 100%;
+    width: 100%;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.group-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 20px 20px 0 0;
+}
+
+.group-card > * {
+    width: 100%;
+}
+
+.group-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.group-card:hover::before {
+    opacity: 1;
+}
+
+/* ── Card Header ──────────────────────────────────────── */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.platform {
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.category {
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    letter-spacing: 0.3px;
+}
+
+/* ── Card Title ───────────────────────────────────────── */
+.group-card h3 {
+    min-height: 56px;
+    margin: 14px 0 10px;
+    line-height: 1.4;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ── Location & Members ───────────────────────────────── */
+.location {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    min-height: 56px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.location i {
+    color: var(--primary);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.members {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.members i {
+    color: var(--primary);
+}
+
+/* ── Featured / Status Badges ────────────────────────── */
+.featured {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.featured.approved {
+    color: #15803d;
+    background: rgba(21, 128, 61, 0.08);
+    border: 1px solid rgba(21, 128, 61, 0.2);
+}
+
+.featured.pending {
+    color: #d97706;
+    background: rgba(217, 119, 6, 0.08);
+    border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.featured.rejected {
+    color: #b91c1c;
+    background: rgba(185, 28, 28, 0.08);
+    border: 1px solid rgba(185, 28, 28, 0.2);
+}
+
+/* ── Join Button ──────────────────────────────────────── */
+.group-card button,
+.group-join-button {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: auto;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s ease;
+    letter-spacing: 0.3px;
+}
+
+.group-card button:hover,
+.group-join-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+}
+
+/* ── Card Action Row ─────────────────────────────────── */
+.group-card-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.group-card-actions button,
+.group-card-actions a {
+    flex: 1;
+}
+
+.group-card-actions .group-join-button,
+.group-card-actions button {
+    margin-top: 0;
+    padding: 9px 6px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+
+/* ── Share Button ────────────────────────────────────── */
+.group-card .share-group-button {
+    background: rgba(99, 102, 241, 0.06);
+    color: var(--primary);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.group-card .share-group-button:hover {
+    background: rgba(99, 102, 241, 0.12);
+    box-shadow: none;
+    transform: none;
+}
+
+/* ── Favorite Button ─────────────────────────────────── */
+.group-card .favorite-group-button {
+    background: rgba(225, 29, 72, 0.06);
+    color: #be123c;
+    border: 1px solid rgba(225, 29, 72, 0.2);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.group-card .favorite-group-button.is-favorite {
+    background: #e11d48;
+    color: white;
+    border-color: #e11d48;
+}
+
+.group-card .favorite-group-button:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+/* ── Report Scam Button ──────────────────────────────── */
+.group-card .report-scam-button {
+    background: rgba(234, 88, 12, 0.06);
+    color: #c2410c;
+    border: 1px solid rgba(234, 88, 12, 0.2);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.group-card .report-scam-button:disabled {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    border-color: var(--border);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.group-card .report-scam-button:hover:not(:disabled) {
+    box-shadow: none;
+    transform: none;
+}
+
+/* ── Group Link ──────────────────────────────────────── */
+.group-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    color: var(--primary);
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: gap 0.2s ease;
+}
+
+.group-link:hover {
+    gap: 8px;
+    text-decoration: underline;
+}
+
+/* ── Favorites Section ───────────────────────────────── */
+#favorites {
+    padding: 90px 0;
+    background: var(--bg-primary);
+}
+
+.favorites-page .section-header {
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+/* ── Favorite & Reported Card Borders ────────────────── */
+.favorite-card {
+    border: 2px solid rgba(34, 197, 94, 0.5) !important;
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.15) !important;
+}
+
+.reported-card {
+    border: 2px solid rgba(239, 68, 68, 0.4) !important;
+    background: rgba(239, 68, 68, 0.02);
+    opacity: 0.8;
+}
+
+/* ── Empty State ─────────────────────────────────────── */
+.empty-state {
+    background: var(--surface);
+    border: 1.5px dashed var(--border);
+    border-radius: 20px;
+    padding: 52px 24px;
+    text-align: center;
+    color: var(--text-secondary);
+    box-shadow: var(--shadow-sm);
+    grid-column: 1 / -1;
+    animation: fadeIn 0.4s ease;
+}
+
+.empty-state h4 {
+    margin: 0 0 8px;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.empty-state p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}

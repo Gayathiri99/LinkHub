@@ -1,0 +1,183 @@
+/* ============================================================
+   RESPONSIVE — CommunityHub Modern Design System
+   Mobile-first breakpoints for all sections
+   ============================================================ */
+
+/* ── Tablet (≤ 992px) ────────────────────────────────── */
+@media (max-width: 992px) {
+
+    /* Navbar */
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-actions {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hero */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-search {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-search input {
+        border-radius: 12px;
+    }
+
+    .hero-search button {
+        border-radius: 12px;
+        width: 100%;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-badges {
+        justify-content: center;
+    }
+
+    /* Platforms */
+    .platform-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Filters */
+    .filter-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* WhatsApp / Platform Layout */
+    .whatsapp-layout {
+        flex-direction: column;
+    }
+
+    .whatsapp-content {
+        max-width: 100%;
+    }
+}
+
+/* ── Mobile (≤ 768px) ────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Cards */
+    .group-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
+    }
+
+    .group-card {
+        padding: 20px;
+    }
+
+    /* Group card action buttons — wrap on small screens */
+    .group-card-actions {
+        flex-wrap: wrap;
+    }
+
+    .group-card-actions button,
+    .group-card-actions a {
+        flex: 1 1 calc(50% - 4px);
+        min-width: 0;
+    }
+
+    /* Section */
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    /* Auth */
+    .auth-card {
+        padding: 30px 22px;
+    }
+
+    .auth-card h1 {
+        font-size: 1.7rem;
+    }
+
+    /* Footer */
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+/* ── Small Mobile (≤ 600px) ──────────────────────────── */
+@media (max-width: 600px) {
+
+    /* Platforms */
+    .platform-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Filters */
+    .filter-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    /* Cards */
+    .group-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hero stats row */
+    .hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Platform filter bars */
+    .platform-filter-bar {
+        flex-direction: column;
+    }
+
+    .platform-filter-bar select {
+        width: 100%;
+    }
+}
+
+/* ── Extra Small (≤ 400px) ───────────────────────────── */
+@media (max-width: 400px) {
+
+    .auth-card {
+        padding: 24px 16px;
+    }
+
+    .group-card-actions .group-join-button,
+    .group-card-actions button {
+        font-size: 0.65rem;
+        padding: 8px 4px;
+    }
+
+    .navbar-container {
+        padding: 0 16px;
+    }
+}

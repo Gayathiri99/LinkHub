@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Neighborhood Network",
+    "country": "India",
+    "state": "Tamil Nadu",
+    "district": "Chennai",
+    "category": "Local"
+  },
+  {
+    "id": 2,
+    "name": "Volunteer Circle",
+    "country": "India",
+    "state": "Karnataka",
+    "district": "Bengaluru",
+    "category": "Community"
+  }
+]

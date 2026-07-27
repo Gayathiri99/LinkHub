@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - CommunityHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">CommunityHub</a>
+        </div>
+        <nav class="nav-menu">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#whatsapp">WhatsApp</a></li>
+            <li><a href="index.html#facebook">Facebook</a></li>
+            <li><a href="index.html#telegram">Telegram</a></li>
+            <li><a href="index.html#instagram">Instagram</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="auth-page">
+      <div class="auth-card">
+        <h1>Welcome Back</h1>
+        <p>Sign in to access your communities.</p>
+        <form id="loginForm">
+          <label for="name">Username</label>
+          <input type="text" id="name" placeholder="Enter your username" required />
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter your phone number" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+
+          <button type="submit" class="auth-btn">Login</button>
+        </form>
+        <p class="auth-link">
+          New here?
+          <a href="register.html">Create an account</a>
+        </p>
+      </div>
+    </main>
+
+  <script src="js/login.js"></script>
+
+
+  </body>
+</html>

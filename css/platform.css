@@ -1,0 +1,274 @@
+#platforms {
+    padding: 80px 0;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+}
+
+.section-description {
+    text-align: center;
+    color: var(--text-muted);
+    margin: 12px auto 45px;
+    max-width: 650px;
+    font-size: 16px;
+}
+
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.platform-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 30px 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+}
+
+.platform-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: #bfdbfe;
+}
+
+.platform-icon {
+    font-size: 44px;
+    margin-bottom: 18px;
+    display: inline-block;
+}
+
+/* Platform Brand Colors */
+.platform-card:nth-child(1) .platform-icon { color: var(--platform-whatsapp); }
+.platform-card:nth-child(2) .platform-icon { color: var(--platform-facebook); }
+.platform-card:nth-child(3) .platform-icon { color: var(--platform-telegram); }
+.platform-card:nth-child(4) .platform-icon { color: var(--platform-instagram); }
+
+.platform-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.platform-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.count {
+    display: inline-block;
+    margin: 8px 0 20px;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.platform-card button {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.platform-card button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-glow);
+}
+
+.whatsapp-page {
+    padding: 90px 0;
+}
+
+#whatsapp {
+    background: linear-gradient(135deg, #f0fdf4 0%, #e6f4ea 100%);
+}
+
+#facebook {
+    background: linear-gradient(135deg, #f5f9ff 0%, #eef2ff 100%);
+}
+
+#telegram {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+#instagram {
+    background: linear-gradient(135deg, #fff7ed 0%, #fdf2f8 100%);
+}
+
+.whatsapp-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.whatsapp-content h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800;
+    margin: 16px 0 12px;
+    color: var(--text-dark);
+}
+
+.whatsapp-content p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.whatsapp-badge {
+    background: #dcfce7;
+    color: #15803d;
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+#facebook .whatsapp-badge {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+#telegram .whatsapp-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+#instagram .whatsapp-badge {
+    background: #fce7f3;
+    color: #be185d;
+}
+
+.whatsapp-points {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+    align-items: stretch;
+}
+
+.point-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    min-height: 100%;
+}
+
+.point-card i {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-size: 20px;
+}
+
+#facebook .point-card i,
+#facebook .whatsapp-panel i {
+    color: var(--platform-facebook);
+}
+
+#telegram .point-card i,
+#telegram .whatsapp-panel i {
+    color: var(--platform-telegram);
+}
+
+#instagram .point-card i,
+#instagram .whatsapp-panel i {
+    color: var(--platform-instagram);
+}
+
+.whatsapp-btn {
+    background: var(--platform-whatsapp);
+    color: white;
+}
+
+#facebook .whatsapp-btn {
+    background: var(--platform-facebook);
+}
+
+#telegram .whatsapp-btn {
+    background: var(--platform-telegram);
+}
+
+#instagram .whatsapp-btn {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.whatsapp-panel {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    height: auto;
+    align-self: start;
+}
+
+.whatsapp-panel h3 {
+    margin-bottom: 18px;
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.whatsapp-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.whatsapp-panel li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.whatsapp-panel li:last-child {
+    border-bottom: none;
+}
+
+.whatsapp-panel i {
+    color: var(--platform-whatsapp);
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .whatsapp-points {
+        grid-template-columns: 1fr;
+    }
+}
+

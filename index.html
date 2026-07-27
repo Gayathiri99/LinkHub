@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CommunityHub — Discover Your Community</title>
+    <meta name="description" content="Find and join thousands of WhatsApp, Telegram, Facebook, and Instagram groups. Discover communities around your interests, location, and more.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--Font Awesome-->
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/platform.css">
+    <link rel="stylesheet" href="css/filters.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+    <div class="container">
+
+        <!-- Logo -->
+        <div class="logo">
+            <a href="#">LinkHub</a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-menu">
+
+            <ul class="nav-links">
+
+                <li><a href="#hero" data-view="home">Home</a></li>
+
+                <li><a href="#whatsapp" data-view="whatsapp">WhatsApp</a></li>
+
+                <li><a href="#facebook" data-view="facebook">Facebook</a></li>
+
+                <li><a href="#telegram" data-view="telegram">Telegram</a></li>
+
+                <li><a href="#instagram" data-view="instagram">Instagram</a></li>
+
+                <li><a href="#favorites" data-view="favorites">Favorites</a></li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Buttons -->
+        <div class="nav-actions" id="authButtons">
+
+            <button type="button" class="submit-group-btn" id="openGroupModalBtn">
+                <i class="fa-solid fa-user-group"></i>
+                Submit Group
+            </button>
+
+            <div class="profile-menu" id="userProfileMenu" hidden>
+                <button type="button" class="profile-menu-btn" id="profileMenuBtn" aria-expanded="false">
+                    <i class="fa-solid fa-user"></i><!--Profile-->
+                </button>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <div id="profileDetails"></div>
+                    <!-- <button type="button" class="profile-favorites-btn" id="profileFavoritesBtn">
+                        <i class="fa-solid fa-heart"></i> Favorites
+                        <span class="profile-favorites-badge" id="profileFavoritesBadge">0</span>
+                    </button> -->
+                    
+                </div>
+            </div>
+
+            <a href="login.html" class="login-btn" id="loginBtn">
+                Login
+            </a>
+
+            <a href="register.html" class="register-btn" id="registerBtn">
+                Register
+            </a>
+
+        </div>
+
+        <!-- Hamburger -->
+        <div class="hamburger">
+
+            ☰
+
+        </div>
+
+    </div>
+
+</header>
+
+<div class="group-modal-backdrop" id="groupModalBackdrop" hidden>
+    <div class="group-modal" role="dialog" aria-modal="true" aria-labelledby="groupModalTitle">
+        <div class="group-modal-header">
+            <h3 id="groupModalTitle">Submit a new community group</h3>
+            <button type="button" class="modal-close-btn" id="closeGroupModalBtn" aria-label="Close">×</button>
+        </div>
+        <form id="submitGroupForm" class="group-submit-form">
+            <input type="text" name="groupName" placeholder="Group name" required>
+            <select name="groupPlatform" required>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Telegram">Telegram</option>
+                <option value="Instagram">Instagram</option>
+            </select>
+            <select name="groupCategory" required>
+                <option value="">Select a managed category</option>
+            </select>
+            <input type="text" name="groupCountry" placeholder="Country" required>
+            <input type="text" name="groupState" placeholder="State" required>
+            <input type="text" name="groupDistrict" placeholder="District" required>
+            <input type="number" name="groupMembers" placeholder="Members" min="1" required>
+            <input type="url" name="groupLink" placeholder="Group link (https://...)" required>
+            <button type="submit" class="submit-group-form-btn">Submit for Approval</button>
+            <p class="form-feedback" id="groupSubmissionMessage" aria-live="polite"></p>
+        </form>
+    </div>
+</div>
+
+    <!-- Hero -->
+    <!-- Hero Section -->
+<section id="hero" class="page-section" data-view="home">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                <i class="fa-solid fa-earth-americas"></i> Discover Communities Worldwide
+            </span>
+
+            <h1>
+                Find the Best
+                <span>WhatsApp, Facebook, Telegram & Instagram</span>
+                Groups
+            </h1>
+
+            <p>
+                Search and join thousands of communities based on
+                your country, state, district, category, and interests.
+            </p>
+
+            <div class="hero-search">
+
+                <input
+                    id="heroSearchInput"
+                    type="text"
+                    placeholder="Search groups by name, category, platform, location...">
+
+                <button id="heroSearchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i> Search
+                </button>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div>
+                    <h3>15K+</h3>
+                    <p>Groups</p>
+                </div>
+
+                <div>
+                    <h3>100+</h3>
+                    <p>Countries</p>
+                </div>
+
+                <div>
+                    <h3>50K+</h3>
+                    <p>Members</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="assets/images/hero.png"
+                alt="Community Hub">
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="whatsapp" class="whatsapp-page page-section hidden-section" data-view="whatsapp">
+    <div class="container whatsapp-layout">
+        <div class="whatsapp-content">
+            <span class="badge whatsapp-badge">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Communities
+            </span>
+            <h2>Join active groups for real conversations</h2>
+            <p>Discover trusted WhatsApp communities for jobs, education, business, networking, and local updates.</p>
+            <div class="whatsapp-points">
+                <div class="point-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Instant updates</span>
+                </div>
+                <div class="point-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Verified groups</span>
+                </div>
+                <div class="point-card">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>Daily discussions</span>
+                </div>
+            </div>
+            <a href="#filters" class="btn whatsapp-btn">Explore Groups</a>
+        </div>
+
+        <div class="whatsapp-panel">
+            <h3>Popular WhatsApp Topics</h3>
+            <ul>
+                <li><i class="fa-solid fa-laptop"></i> Tech & startups</li>
+                <li><i class="fa-solid fa-graduation-cap"></i> Study circles</li>
+                <li><i class="fa-solid fa-briefcase"></i> Job alerts</li>
+                <li><i class="fa-solid fa-users"></i> Local networking</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 24px;">
+        <div class="platform-filter-bar" data-platform="WhatsApp">
+            <select id="whatsappCountryFilter" aria-label="Filter WhatsApp groups by country"></select>
+            <select id="whatsappStateFilter" aria-label="Filter WhatsApp groups by state"></select>
+            <select id="whatsappDistrictFilter" aria-label="Filter WhatsApp groups by district"></select>
+            <select id="whatsappCategoryFilter" aria-label="Filter WhatsApp groups by category"></select>
+            <select id="whatsappGroupFilter" aria-label="Filter WhatsApp groups by group name"></select>
+        </div>
+        <h3>WhatsApp Groups</h3>
+        <div class="group-grid" id="whatsappGroupCards"></div>
+    </div>
+</section>
+
+<section id="facebook" class="whatsapp-page page-section hidden-section" data-view="facebook">
+    <div class="container whatsapp-layout">
+        <div class="whatsapp-content">
+            <span class="badge whatsapp-badge">
+                <i class="fa-brands fa-facebook-f"></i> Facebook Communities
+            </span>
+            <h2>Explore public groups and engaging communities</h2>
+            <p>Find Facebook communities for business networking, learning, hobbies, and local support groups.</p>
+            <div class="whatsapp-points">
+                <div class="point-card">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Large communities</span>
+                </div>
+                <div class="point-card">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>Discussion groups</span>
+                </div>
+                <div class="point-card">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>Event updates</span>
+                </div>
+            </div>
+            <a href="#filters" class="btn whatsapp-btn">Explore Groups</a>
+        </div>
+
+        <div class="whatsapp-panel">
+            <h3>Popular Facebook Topics</h3>
+            <ul>
+                <li><i class="fa-solid fa-briefcase"></i> Career groups</li>
+                <li><i class="fa-solid fa-graduation-cap"></i> Study communities</li>
+                <li><i class="fa-solid fa-store"></i> Small business</li>
+                <li><i class="fa-solid fa-heart"></i> Lifestyle circles</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 24px;">
+        <div class="platform-filter-bar" data-platform="Facebook">
+            <select id="facebookCountryFilter" aria-label="Filter Facebook groups by country"></select>
+            <select id="facebookStateFilter" aria-label="Filter Facebook groups by state"></select>
+            <select id="facebookDistrictFilter" aria-label="Filter Facebook groups by district"></select>
+            <select id="facebookCategoryFilter" aria-label="Filter Facebook groups by category"></select>
+            <select id="facebookGroupFilter" aria-label="Filter Facebook groups by group name"></select>
+        </div>
+        <h3>Facebook Groups</h3>
+        <div class="group-grid" id="facebookGroupCards"></div>
+    </div>
+</section>
+
+<section id="telegram" class="whatsapp-page page-section hidden-section" data-view="telegram">
+    <div class="container whatsapp-layout">
+        <div class="whatsapp-content">
+            <span class="badge whatsapp-badge">
+                <i class="fa-brands fa-telegram"></i> Telegram Communities
+            </span>
+            <h2>Join fast-moving channels and private groups</h2>
+            <p>Discover Telegram communities for updates, networking, study groups, crypto, and niche interests.</p>
+            <div class="whatsapp-points">
+                <div class="point-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Fast updates</span>
+                </div>
+                <div class="point-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Private groups</span>
+                </div>
+                <div class="point-card">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>Real-time chat</span>
+                </div>
+            </div>
+            <a href="#filters" class="btn whatsapp-btn">Explore Groups</a>
+        </div>
+
+        <div class="whatsapp-panel">
+            <h3>Popular Telegram Topics</h3>
+            <ul>
+                <li><i class="fa-solid fa-robot"></i> Tech & AI</li>
+                <li><i class="fa-solid fa-graduation-cap"></i> Study channels</li>
+                <li><i class="fa-solid fa-chart-line"></i> Trading insights</li>
+                <li><i class="fa-solid fa-users"></i> Community chats</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 24px;">
+        <div class="platform-filter-bar" data-platform="Telegram">
+            <select id="telegramCountryFilter" aria-label="Filter Telegram groups by country"></select>
+            <select id="telegramStateFilter" aria-label="Filter Telegram groups by state"></select>
+            <select id="telegramDistrictFilter" aria-label="Filter Telegram groups by district"></select>
+            <select id="telegramCategoryFilter" aria-label="Filter Telegram groups by category"></select>
+            <select id="telegramGroupFilter" aria-label="Filter Telegram groups by group name"></select>
+        </div>
+        <h3>Telegram Groups</h3>
+        <div class="group-grid" id="telegramGroupCards"></div>
+    </div>
+</section>
+
+<section id="instagram" class="whatsapp-page page-section hidden-section" data-view="instagram">
+    <div class="container whatsapp-layout">
+        <div class="whatsapp-content">
+            <span class="badge whatsapp-badge">
+                <i class="fa-brands fa-instagram"></i> Instagram Communities
+            </span>
+            <h2>Connect with creators and niche audiences</h2>
+            <p>Discover Instagram communities built around creators, content, fashion, fitness, and brand networking.</p>
+            <div class="whatsapp-points">
+                <div class="point-card">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>Creator spaces</span>
+                </div>
+                <div class="point-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Growth circles</span>
+                </div>
+                <div class="point-card">
+                    <i class="fa-solid fa-handshake"></i>
+                    <span>Collaboration groups</span>
+                </div>
+            </div>
+            <a href="#filters" class="btn whatsapp-btn">Explore Groups</a>
+        </div>
+
+        <div class="whatsapp-panel">
+            <h3>Popular Instagram Topics</h3>
+            <ul>
+                <li><i class="fa-solid fa-palette"></i> Design & art</li>
+                <li><i class="fa-solid fa-dumbbell"></i> Fitness & wellness</li>
+                <li><i class="fa-solid fa-bag-shopping"></i> Fashion & beauty</li>
+                <li><i class="fa-solid fa-film"></i> Content creators</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 24px;">
+        <div class="platform-filter-bar" data-platform="Instagram">
+            <select id="instagramCountryFilter" aria-label="Filter Instagram groups by country"></select>
+            <select id="instagramStateFilter" aria-label="Filter Instagram groups by state"></select>
+            <select id="instagramDistrictFilter" aria-label="Filter Instagram groups by district"></select>
+            <select id="instagramCategoryFilter" aria-label="Filter Instagram groups by category"></select>
+            <select id="instagramGroupFilter" aria-label="Filter Instagram groups by group name"></select>
+        </div>
+        <h3>Instagram Groups</h3>
+        <div class="group-grid" id="instagramGroupCards"></div>
+    </div>
+</section>
+
+<section id="favorites" class="page-section hidden-section" data-view="favorites">
+    <div class="container favorites-page">
+        <div class="section-header">
+            <h2 class="section-title"><i class="fa-solid fa-heart"></i> My Favorite Groups</h2>
+            <p class="section-description">Quickly return to the communities you have saved.</p>
+        </div>
+        <div class="group-grid" id="favoriteGroupCards"></div>
+    </div>
+</section>
+
+    <!-- Platform Section -->
+    <!-- Platform Section -->
+
+<section id="platforms" class="page-section" data-view="home">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Browse by Platform
+        </h2>
+
+        <p class="section-description">
+            Choose your preferred platform to explore thousands of communities.
+        </p>
+
+        <div class="platform-grid">
+
+            <div class="platform-card whatsapp">
+
+                <div class="platform-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+
+                <h3>WhatsApp</h3>
+
+                <p>
+                    Join active WhatsApp groups from around the world.
+                </p>
+
+                <span class="count">
+                    2,450 Groups
+                </span>
+
+                <button id="exploreWhatsappBtn">
+                        Explore →
+                </button>
+
+            </div>
+
+            <div class="platform-card facebook">
+
+                <div class="platform-icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+
+                <h3>Facebook</h3>
+
+                <p>
+                    Discover Facebook communities and public groups.
+                </p>
+
+                <span class="count">
+                    1,520 Groups
+                </span>
+
+                <button id="exploreFacebookBtn"  >
+                    Explore →
+                </button>
+
+            </div>
+
+            <div class="platform-card telegram">
+
+                <div class="platform-icon">
+                    <i class="fa-brands fa-telegram"></i>
+                </div>
+
+                <h3>Telegram</h3>
+
+                <p>
+                    Browse Telegram groups and channels.
+                </p>
+
+                <span class="count">
+                    3,200 Groups
+                </span>
+
+                <button id="exploreTelegramBtn">
+                    Explore →
+                </button>
+
+            </div>
+
+            <div class="platform-card instagram">
+
+                <div class="platform-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <h3>Instagram</h3>
+
+                <p>
+                    Find Instagram communities and creators.
+                </p>
+
+                <span class="count">
+                    900 Groups
+                </span>
+
+                <button id="exploreInstagramBtn">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- Filter -->
+    <!-- ================= FILTER SECTION =================
+
+<section id="filters" class="page-section hidden-section" data-view="home">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Find Your Community
+        </h2>
+
+        <p class="section-description">
+            Search communities based on your location and interests.
+        </p>
+
+        <div class="filter-container">
+
+            <select id="country">
+
+                <option value="">
+                    Select Country
+                </option>
+
+            </select>
+
+            <select id="state">
+
+                <option value="">
+                    Select State
+                </option>
+
+            </select>
+
+            <select id="district">
+
+                <option value="">
+                    Select District
+                </option>
+
+            </select>
+
+            <select id="category">
+
+                <option value="">
+                    Select Category
+                </option>
+
+            </select>
+
+            <button class="search-btn" id="filterSearchBtn">
+
+                <i class="fa-solid fa-magnifying-glass"></i> Search Groups
+
+            </button>
+
+        </div> -->
+
+    </div>
+
+</section>
+<!-- <div class="filter-chips page-section hidden-section" data-view="home">
+
+    <button class="chip active">All</button>
+
+    <button class="chip">Technology</button>
+
+    <button class="chip">Jobs</button>
+
+    <button class="chip">Education</button>
+
+    <button class="chip">Movies</button>
+
+    <button class="chip">Business</button>
+
+    <button class="chip">Gaming</button>
+
+    <button class="chip">Sports</button>
+
+    <button class="chip">AI</button>
+
+</div> -->
+
+    <!-- Trending -->
+    <!-- ================= TRENDING GROUPS ================= -->
+<section id="trending" class="page-section" data-view="home">
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2 class="section-title">
+                <i class="fa-solid fa-fire"></i> Trending Communities
+            </h2>
+
+            <p class="section-description">
+                Discover the most active communities across all platforms.
+            </p>
+        </div>
+
+        <div class="group-grid" id="groupCards">
+
+            <!-- Card 1 -->
+            <div class="group-card">
+
+<div class="card-header">
+
+<span class="platform whatsapp">
+<i class="fa-brands fa-whatsapp"></i> WhatsApp
+</span>
+
+<span class="category">
+Technology
+</span>
+
+</div>
+
+<h3>
+Chennai Developers
+</h3>
+
+<p class="location">
+<i class="fa-solid fa-location-dot"></i> Chennai, Tamil Nadu, India
+</p>
+
+<p class="members">
+<i class="fa-solid fa-users"></i> 1,250 Members
+</p>
+
+<span class="featured">
+<i class="fa-solid fa-star"></i> Featured
+</span>
+
+<button>
+Join Community
+</button>
+
+</div>
+
+            <!-- Card 2 -->
+            <div class="group-card">
+
+<div class="card-header">
+
+<span class="platform telegram">
+<i class="fa-brands fa-telegram"></i> Telegram
+</span>
+
+<span class="category">
+Jobs
+</span>
+
+</div>
+
+<h3>
+IT Jobs Chennai
+</h3>
+
+<p class="location">
+<i class="fa-solid fa-location-dot"></i> Chennai, Tamil Nadu
+</p>
+
+<p class="members">
+<i class="fa-solid fa-users"></i> 2,400 Members
+</p>
+
+<button>
+Join Community
+</button>
+
+</div>
+
+
+            <!-- Card 3 -->
+            <div class="group-card">
+
+<div class="card-header">
+
+<span class="platform facebook">
+<i class="fa-brands fa-facebook-f"></i> Facebook
+</span>
+
+<span class="category">
+Education
+</span>
+
+</div>
+
+<h3>
+UPSC Aspirants
+</h3>
+
+<p class="location">
+<i class="fa-solid fa-location-dot"></i> Delhi, India
+</p>
+
+<p class="members">
+<i class="fa-solid fa-users"></i> 5,400 Members
+</p>
+
+<button>
+Join Community
+</button>
+
+</div>
+
+        </div>
+
+    </div>
+   
+
+</section>
+
+    <!-- Search Results -->
+    <section id="searchResults" class="page-section" data-view="home" style="display:none;">
+        <div class="container">
+            <div class="section-header search-results-header">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-magnifying-glass"></i> Search Results
+                </h2>
+                <p class="section-description" id="searchResultsInfo"></p>
+                <button class="clear-search-btn" id="clearSearchBtn">
+                    <i class="fa-solid fa-xmark"></i> Clear Search
+                </button>
+            </div>
+            <div class="group-grid" id="searchResultCards"></div>
+        </div>
+    </section>
+
+    <!-- Latest -->
+    <section id="latest" class="page-section" data-view="home">
+
+    </section>
+
+    <!-- Footer -->
+    <!-- ================= FOOTER ================= -->
+
+<footer id="footer" class="page-section" data-view="home">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- About -->
+
+            <div class="footer-column">
+
+                <h2 class="footer-logo">
+                    CommunityHub
+                </h2>
+
+                <p>
+                    Discover and join the best WhatsApp, Facebook,
+                    Telegram and Instagram communities from around
+                    the world.
+                </p>
+
+            </div>
+
+            <!-- Quick Links -->
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="#">Home</a></li>
+
+                    <li><a href="#">About</a></li>
+
+                    <li><a href="#">Categories</a></li>
+
+                    <li><a href="#">Trending</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Platforms -->
+
+            <div class="footer-column">
+
+                <h3>Platforms</h3>
+
+                <ul>
+
+                    <li><a href="#">WhatsApp</a></li>
+
+                    <li><a href="#">Facebook</a></li>
+
+                    <li><a href="#">Telegram</a></li>
+
+                    <li><a href="#">Instagram</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Support -->
+
+            <div class="footer-column">
+
+                <h3>Support</h3>
+
+                <ul>
+
+                    <li><a href="#">Contact</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Terms & Conditions</a></li>
+
+                    <li><a href="#">FAQ</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Newsletter -->
+
+            <div class="footer-column">
+
+                <h3>Newsletter</h3>
+
+                <p>
+                    Get the latest communities delivered to your inbox.
+                </p>
+
+                <div class="newsletter">
+
+                    <input
+                        type="email"
+                        placeholder="Enter email">
+
+                    <button>
+                        Subscribe
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 CommunityHub. All Rights Reserved.
+            </p>
+
+            <div class="social-icons">
+
+                <a href="#">🌐</a>
+
+                <a href="#">📘</a>
+
+                <a href="#">🐦</a>
+
+                <a href="#">💼</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+    <script src="js/admin.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>
